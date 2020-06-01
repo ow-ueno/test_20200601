@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed;
 
-    public Rigidbody rb;
+    private Rigidbody rb;
+    public Text countText;
+    private int count;
 
     // Start is called before the first frame update
     void Start(){
         rb = GetComponent<Rigidbody>();
+        count = 0;
+        SetCountText();
     }
 
     // Update is called once per frame
@@ -29,9 +34,15 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pick Up"))
+        if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
+            count++;
+            SetCountText();
         }
+    }
+
+    void SetCountText() {
+        countText.text = "Count: " + count.ToString();
     }
 }
