@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/rollaball/MiniGame.unity
+=======
+- path: Assets/Scenes/SampleScene.unity
+>>>>>>> 5b38edcabba2ac3168153d242a8ab042c2e8762b
   isLoaded: 1
   isActive: 1
   isSubScene: 0
